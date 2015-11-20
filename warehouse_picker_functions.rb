@@ -138,7 +138,30 @@ def list_of_items(bays)
   selected_products.map { |item| item[:product]  }
 end
 
+def list_of_bays(items)
+  new_array = items.split(',')
+  puts "#{new_array}"
+  puts
+  selected_bays = PRODUCT_BAY.select do |location| 
+      new_array.include?( location[:product] ) 
+    end
+  puts "selected bays #{selected_bays}"
+  puts
+  selected_bays.map { |item| item[:bay]  }
+end
 
+puts 
+puts
+
+
+## ADVANCED SECTION ONE ###
+def list_of_four_items(bays)
+  new_array = bays.split(',')
+  selected_products = PRODUCT_BAY.select do |location| 
+      new_array.include?( location[:bay] ) 
+    end
+  selected_products.map { |item| item[:product]  }
+end
 
 
 

@@ -22,10 +22,24 @@ require_relative 'warehouse_picker_functions'
   # Given a list of bays, list the items in those bays
  list_items = list_of_items('b5,b10,b6')
  puts "The list of items are #{list_items}
-  and they should 'nail filer', 'cookie jar' and 'tooth paste'."
-
-
-  # given "b5, b10, and b6", determine that the products are "nail filer, cookie jar, and tooth paste"
-  # Given a list of items find the bays.
+  and they should be 'nail filer', 'cookie jar' and 'tooth paste'."
+  puts
 
   # given "shoe lace, rusty nail, leg warmers", determine that those items need to be collected from "c1, c9, and c10"
+
+list_bays = list_of_bays('shoe lace,rusty nail,leg warmers')
+puts "The LIST OF BAYS are #{list_bays}
+  and they should be c1, c9 and c10"
+
+
+
+
+### ADVANCED SECTION ##
+
+list_four_items = list_of_four_items('b3,c7,c9,a3')
+puts "The list of FOUR items are #{list_four_items}
+ and they should 'picture frame', 'paint brush', shoe lace' and 'blouse'"
+
+
+  # Given a list of items find the bays.
+
