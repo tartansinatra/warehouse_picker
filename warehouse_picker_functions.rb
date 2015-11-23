@@ -117,17 +117,17 @@ PRODUCT_BAY = [
   }
 ]
 
-###  SINGLE BAY Q1 ####
+# ###  SINGLE BAY Q1 ####
 def item_at_bay(bay)
   PRODUCT_BAY.select { |location| location[:bay] == bay }.first[:product]
 end
 
-###  SINGLE BAY Q2 ####
+# ###  SINGLE BAY Q2 ####
 def bay_by_product(item)
   PRODUCT_BAY.select { |location| location[:product] == item }.first[:bay]
 end
 
-###  MULTIPLE BAY Q3 ####
+# ###  MULTIPLE BAY Q3 ####
 def list_of_items(bays)
   new_array = bays.split(',')
   puts "#{new_array}"
@@ -140,7 +140,7 @@ end
 
 
 
-###  MULTIPLE BAY Q4 ####
+# ###  MULTIPLE BAY Q4 ####
 
 def list_of_bays(items)
   new_array = items.split(',')
@@ -164,67 +164,25 @@ end
 ## ADVANCED SECTION ONE ###
 
 
-def list_of_items(bays)
-  new_array = bays.split(',')
+def Q5list_of_items(bays)
+  new_array = bays.split(',')('a'..'z').to_a + ('0'..'9').to_a
   puts "#{new_array}"
   selected_products = PRODUCT_BAY.select do |location| 
-      new_array.include?( location[:bay] ) 
+      new_array.include?( location[:bay] )
     end
   puts "selected products #{selected_products}"
   selected_products.map { |item| item[:product] }
 end
 
-# def list_of_bays(items)
-#   new_array = items.split(',')
-#   puts "#{new_array}"
-#   puts
-#   selected_bays = PRODUCT_BAY.select do |location| 
-#       new_array.include?( location[:product] ) 
-#     end
-#   puts "selected bays #{selected_bays}"
-#   puts
-#   selected_bays.map { |item| item[:bay]  }
-# end
-
-
-
-
-
-
-# def list_of_items(bays)
-#   new_array = bays.split(',')
-#   puts new_array
-#   selected_products = PRODUCT_BAY.select do |location| 
-#       new_array.include?( location[:bay] ) 
-#     end
-#   selected_products.map { |item| item[:product]  }
-# end
-
-
-def list_of_items(bays)
-  new_array = bays.split(",")
-  puts "NEW ARRAY IS #{new_array}"
-  selected_products = PRODUCT_BAY.select do |location| 
-      new_array.include? (location[:bay]) 
-    end
-  selected_products.map { |item| item[:product]  }
-end
-
-
-
-
-
 
 
 
 # def list_of_four_items(bays)
-#   new_array = bays.split(',',"(?!^)")
+#   new_array = bays.sort.("(?!^)")split(',')
 #   puts new_array
 #   selected_products = PRODUCT_BAY.select do |location| 
 #       new_array.include?( location[:bay] ) 
 #     end
 #   selected_products.map { |item| item[:product]  }
 # end
-
-
 
